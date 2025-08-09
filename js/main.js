@@ -3,9 +3,10 @@
  * @note 画面ロード時のイベント
  */
 $(window).on("load", function() {
-  alert(1);
   _initializeInsertHtml();
+  alert(3);
   _initializeRecordHtml();
+  alert(2);
 });
 
 
@@ -42,5 +43,6 @@ function _initializeRecordHtml() {
   var dumpHtml = new DumpHtml();
   dumpHtml.addDumpButtonOnClick(_requestDump);
 }
+
 
 
