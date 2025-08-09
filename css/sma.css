@@ -481,7 +481,7 @@ hr {
   position: sticky;
   top: 0;
   left: 0;
-  padding: 2px 10px;
+  padding: 2px 5px;
   border-bottom: 1px solid #ccc;
   text-align: right;
 }
@@ -501,7 +501,7 @@ hr {
   background-color: #fff;
 }
 .dump-table td {
-  padding: 2px 10px;
+  padding: 2px 5px;
   text-align: right;
 }
 .dump-table td:first-child {
@@ -602,20 +602,22 @@ hr {
   display: none;
 }
 .dump-table tr .win-fighter-img {
-  margin-top: 3px;
+  padding: 0;
 }
 .dump-table tr .lose-fighter-img {
-  padding-left: 10px;
+  padding: 0;
 }
 .dump-table tr .win-fighter-img img {
   margin-top: 3px;
   margin-bottom: -3px;
   width: 20px;
+  padding: 0;
 }
 .dump-table tr .lose-fighter-img img {
   margin-top: 3px;
   margin-bottom: -3px;
   width: 20px;
+  padding: 0;
 }
 .dump-table tr .lose-user-name {
   min-width: 80px;
@@ -658,3 +660,4 @@ hr {
       width: 98%;
   }
 }
+
