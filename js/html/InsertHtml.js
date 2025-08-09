@@ -13,7 +13,7 @@ class InsertHtml {
 
   get date()                { return this._html_date.val(); }
   set date(value)           {        this._html_date.val(value); }
-  set upsertResult(text)    { this._html_upsertResult.text(text); }
+  set upsertResult(text)    { this._html_upsertResult.html(text); }
 
   _html_td_user(html_tr)    { return html_tr.find(".user-name"); }
   _html_td_fighter(html_tr) { return html_tr.find(".fighter-name"); }
