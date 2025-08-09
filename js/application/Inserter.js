@@ -2,7 +2,8 @@ class Inserter {
 
   constructor() {
     this._gameRecordDb = new GameRecordDb();
-    this._insertHtml = new InsertHtml();
+    this._insertHtml   = new InsertHtml();
+    this._dumpHtml     = new DumpHtml();
   }
 
 
@@ -17,7 +18,7 @@ class Inserter {
       await this._insert(isDump);
     }
     catch(e) {
-      alert(e.stack);
+      alert(e.message);
     }
 
     Util.enableAllButtons();
@@ -45,6 +46,16 @@ class Inserter {
 
     // 結果を解析
     gameRecord = gameRecords.index(gameRecords.length - 1);
+    var recordAnalyzer = new RecordAnalyzer(gameRecords);
+
+    // 登録結果欄を更新
+    this._insertHtml.upsertResult = gameRecord.toString();
+
+    // 入力フォームをクリア
+    this._clearInputs();
+
+    // 戦績を更新
+    this._dumpHtml.update(recordAnalyzer);
   }
 
 

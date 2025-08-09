@@ -253,7 +253,7 @@
                         <hr>
                         <div class="input button">
                             <button type="button" class="request-button upsert-button" id="insert-button">
-                                登録する
+                                登録＆取得
                             </button>
                         </div>
                         <div class="upsert-result">
@@ -295,11 +295,11 @@
                                         <tr>
                                             <th class="id"               >ID</th>
                                             <th class="date"             >日付</th>
-                                            <th class="stock"            >差</th>
                                             <th class="win-user-name"    >勝ち</th>
                                             <th class="win-fighter-name" >勝ちキャラ</th>
                                             <th class="win-fighter-id"   >勝ちキャラID</th>
                                             <th class="win-fighter-img"  ></th>
+                                            <th class="stock"            >差</th>
                                             <th class="lose-fighter-img" ></th>
                                             <th class="lose-user-name"   >負け</th>
                                             <th class="lose-fighter-name">負けキャラ</th>
@@ -311,11 +311,11 @@
                                         <tr class="clickable">
                                             <td class="id"                data-raw=""></td>
                                             <td class="date"              data-raw=""></td>
-                                            <td class="stock"             data-raw=""></td>
                                             <td class="win-user-name"     data-raw=""></td>
                                             <td class="win-fighter-name"  data-raw=""></td>
                                             <td class="win-fighter-id"    data-raw=""></td>
                                             <td class="win-fighter-img"   data-raw=""><img/></td>
+                                            <td class="stock"             data-raw=""></td>
                                             <td class="lose-fighter-img"  data-raw=""><img/></td>
                                             <td class="lose-user-name"    data-raw=""></td>
                                             <td class="lose-fighter-name" data-raw=""></td>
@@ -335,6 +335,95 @@
                     </div>
                 </div>
             </section>
+
+
+
+            <dialog class="dialog" id="dialog" autofocus>
+
+                <section class="dialog-section" id="dialog-update">
+                    <div class="dialog-head">
+                        戦績の修正
+                    </div>
+                    <div class="dialog-body">
+                        <div class="upsert-form">
+                            <div class="two-columns">
+                                <div class="two-columns-left">
+                                    <dl class="date">
+                                        <dt>
+                                            対戦日
+                                        </dt>
+                                        <dd>
+                                            <input type="date" class="upsert-form-date">
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="fighter">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>ユーザー</th>
+                                            <th>ファイター</th>
+                                            <th>勝ち</th>
+                                            <th>負け</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input class="user-name"    type="text" list="user-list"></td>
+                                            <td><input class="fighter-name" type="text" list="fighter-list"></td>
+                                            <td><input class="is-win"       type="checkbox"></td>
+                                            <td><input class="is-lose"      type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input class="user-name"    type="text" list="user-list"></td>
+                                            <td><input class="fighter-name" type="text" list="fighter-list"></td>
+                                            <td><input class="is-win"       type="checkbox"></td>
+                                            <td><input class="is-lose"      type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <hr>
+                            <div class="stock">
+                                <dl>
+                                    <dt>
+                                        スト差:
+                                    </dt>
+                                    <dd>
+                                        <input type="radio" id="update-stock-3" name="update-stock" value=3>
+                                        <label for="update-stock-3">３</label>
+                                        <input type="radio" id="update-stock-2" name="update-stock" value=2>
+                                        <label for="update-stock-2">２</label>
+                                        <input type="radio" id="update-stock-1" name="update-stock" value=1>
+                                        <label for="update-stock-1">１</label>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <hr>
+                            <div class="input button">
+                                <button type="button" class="request-button upsert-button" id="update-button">
+                                    登録する
+                                </button>
+                            </div>
+                            <div class="upsert-result">
+                                <div class="upsert-result-caption">登録結果:</div>
+                                <div class="upsert-result-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dialog-section">
+                    <button type="button" id="dialog-close-button">close</button>
+                </section>
+            </dialog>
+
+
+
+
+
         </div>
 
         
@@ -367,4 +456,3 @@
 
     </body>
 </html>
-

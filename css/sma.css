@@ -398,6 +398,10 @@ hr {
   width: 40%;
   background-color: rgba(0, 164, 105, 1.0);
 }
+.upsert-button {
+  width: 40%;
+  background: linear-gradient(135deg, rgba(0, 164, 105, 1.0) 0%, rgba(0, 164, 105, 1.0) 50%, rgba(0, 73, 134, 1.0) 50%, rgba(0, 73, 134, 1.0) 100%);
+}
 .upsert-result {
   display: flex !important;
   align-items: flex-start;
@@ -448,7 +452,7 @@ hr {
   padding: 5px 0;
 }
 .dump-button {
-  width: 150px;
+  width: 40%;
   background-color: rgba(0, 73, 134, 1.0);
 }
 
@@ -595,13 +599,20 @@ hr {
 .dump-table tr .win-fighter-id {
   display: none;
 }
-.dump-table tr .win-fighter-img img {
-  width: 20px;
+.dump-table tr .win-fighter-img {
+  margin-top: 3px;
 }
 .dump-table tr .lose-fighter-img {
   padding-left: 10px;
 }
+.dump-table tr .win-fighter-img img {
+  margin-top: 3px;
+  margin-bottom: -3px;
+  width: 20px;
+}
 .dump-table tr .lose-fighter-img img {
+  margin-top: 3px;
+  margin-bottom: -3px;
   width: 20px;
 }
 .dump-table tr .lose-user-name {
@@ -613,4 +624,35 @@ hr {
 }
 .dump-table tr .lose-fighter-id {
   display: none;
+}
+
+
+
+
+/******************************************************************************/
+/* dialog                                                                     */
+/******************************************************************************/
+.dialog::backdrop {
+  backdrop-filter: blur(8px);
+}
+.dialog {
+  position: fixed;
+  inset-inline: 0;
+  inset-block: 0;
+  min-width: 360px;
+  max-width: 680px;
+  max-height: 95%;
+  margin: auto;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+@media only screen and (max-width:699px) {
+  .dialog {
+      width: 98%;
+  }
 }

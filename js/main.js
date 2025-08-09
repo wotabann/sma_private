@@ -42,6 +42,3 @@ function _initializeRecordHtml() {
   dumpHtml.addDumpButtonOnClick(_requestDump);
 }
 
-
-
-

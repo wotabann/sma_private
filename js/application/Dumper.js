@@ -15,7 +15,7 @@ class Dumper {
       await this._dump();
     }
     catch(e) {
-      alert(e.stack);
+      alert(e.message);
     }
     Util.enableAllButtons();
   }

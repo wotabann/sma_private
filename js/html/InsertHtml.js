@@ -5,13 +5,15 @@ class InsertHtml {
 
   get _html_section()  { return $("#insert"); }
 
-  get _html_date()   { return $(this._html_section.find(".date input")); }
-  get _html_stock()  { return $(this._html_section.find(".stock input:checked")); }
-  get _html_tbody()  { return $(this._html_section.find(".fighter tbody")); }
-  get _html_trs()    { return $(this._html_tbody.find("tr")); }
+  get _html_date()         { return $(this._html_section.find(".date input")); }
+  get _html_stock()        { return $(this._html_section.find(".stock input:checked")); }
+  get _html_tbody()        { return $(this._html_section.find(".fighter tbody")); }
+  get _html_trs()          { return $(this._html_tbody.find("tr")); }
+  get _html_upsertResult() { return $(this._html_section.find(".upsert-result-content")); }
 
   get date()                { return this._html_date.val(); }
   set date(value)           {        this._html_date.val(value); }
+  set upsertResult(text)    { this._html_upsertResult.text(text); }
 
   _html_td_user(html_tr)    { return html_tr.find(".user-name"); }
   _html_td_fighter(html_tr) { return html_tr.find(".fighter-name"); }
@@ -64,6 +66,8 @@ class InsertHtml {
       this._html_td_isWin(html_tr).prop("checked", false);
       this._html_td_isLose(html_tr).prop("checked", false);
     }
+
+    this._html_stock.prop("checked", false);
   }
 
 
