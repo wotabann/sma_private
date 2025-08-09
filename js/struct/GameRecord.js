@@ -41,4 +41,23 @@ class GameRecord {
     string += "・負け: " + loser;
     return string;
   }
+
+  toHtmlString() {
+    var winner;
+    var loser;
+    if (this.winFighterId == this.loseFighterId) {
+      winner = this.winUserName;
+      loser  = this.loseUserName;
+    }
+    else {
+      winner = Fighter.idToName[this.winFighterId];
+      loser  = Fighter.idToName[this.loseFighterId];
+    }
+
+    var string = "";
+    string += "・日付: " + this.date + "<br/>";
+    string += "・勝ち: " + winner + "　(+" + this.stock + ")<br/>";
+    string += "・負け: " + loser;
+    return string;
+  }
 }

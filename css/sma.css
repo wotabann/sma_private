@@ -585,9 +585,11 @@ hr {
 }
 .dump-table tr .date {
   min-width: 80px;
+  text-align: center;
 }
 .dump-table tr .stock {
-  min-width: 30px;
+  min-width: 40px;
+  text-align: center;
 }
 .dump-table tr .win-user-name {
   min-width: 80px;

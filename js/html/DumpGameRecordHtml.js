@@ -142,7 +142,7 @@ class DumpGameRecordHtml {
     // 各要素の表示を更新
     this._html_td_id(html_tr).text(gameRecord.id);
     this._html_td_date(html_tr).text(gameRecord.date.substr(5, 5));
-    this._html_td_stock(html_tr).text(gameRecord.stock);
+    this._html_td_stock(html_tr).text(gameRecord.stock + " - 0");
     this._html_td_winUserName(html_tr).text(gameRecord.winUserName);
     this._html_td_winFighterName(html_tr).text(Fighter.idToName[gameRecord.winFighterId]);
     this._html_td_winFighterId(html_tr).text(gameRecord.winFighterId);

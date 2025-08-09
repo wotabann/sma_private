@@ -49,7 +49,7 @@ class Inserter {
     var recordAnalyzer = new RecordAnalyzer(gameRecords);
 
     // 登録結果欄を更新
-    this._insertHtml.upsertResult = gameRecord.toString();
+    this._insertHtml.upsertResult = gameRecord.toHtmlString();
 
     // 入力フォームをクリア
     this._clearInputs();
