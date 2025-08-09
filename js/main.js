@@ -4,9 +4,7 @@
  */
 $(window).on("load", function() {
   _initializeInsertHtml();
-  alert(3);
   _initializeRecordHtml();
-  alert(2);
 });
 
 
@@ -43,6 +41,7 @@ function _initializeRecordHtml() {
   var dumpHtml = new DumpHtml();
   dumpHtml.addDumpButtonOnClick(_requestDump);
 }
+
 
 
 
