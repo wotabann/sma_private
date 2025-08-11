@@ -112,7 +112,7 @@ class DumpGameRecordHtml {
         msg += "\n上記の戦績を有効にしますか？";
       }
       else {
-        msg += "\n上記の戦績を無効にしますか？\n※後から再び有効化ほできます。";
+        msg += "\n上記の戦績を無効にしますか？\n\n※後から再び有効化できます。";
       }
       if (window.confirm(msg)) {
         await e.data.callback(e.data.gameRecord);
@@ -266,6 +266,7 @@ class DumpGameRecordHtml {
 
   
 }
+
 
 
 
