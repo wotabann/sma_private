@@ -108,7 +108,7 @@ class DumpGameRecordHtml {
     var fnc = async function(e) {
       var msg = "";
       msg += e.data.gameRecord.toString();
-      msg += "\n上記の戦績を修正しますか？";
+      msg += "\n上記の戦績を有効または無効にしますか？";
       if (window.confirm(msg)) {
         await e.data.callback(e.data.gameRecord);
       }
@@ -242,7 +242,7 @@ class DumpGameRecordHtml {
 
     // 確認ダイアログ
     var operation = (gameRecord.isDisabled) ? "無効" : "有効";
-    if (!window.confirm("データを" + operation + "にしますか？")) {
+    if (!window.confirm("データを" + operation + "にします。よろしいですか？")) {
       return "";
     }
 
@@ -261,4 +261,5 @@ class DumpGameRecordHtml {
 
   
 }
+
 
