@@ -102,15 +102,15 @@ class DumpGameRecordHtml {
   _updateRowClickListener(html_tr) {
     var arg = {
       //callback: this._dialogHtml.openRegisterDialog.bind(this._dialogHtml),
-      callback: null,
+      callback: this._delete,
       gameRecord: this._getGameRecordFromRow(html_tr)
     };
-    var fnc = function(e) {
+    var fnc = async function(e) {
       var msg = "";
       msg += e.data.gameRecord.toString();
       msg += "\n上記の戦績を修正しますか？";
       if (window.confirm(msg)) {
-        e.data.callback(e.data.gameRecord);
+        await e.data.callback(e.data.gameRecord);
       }
     };
     html_tr.on("click", arg, fnc);
@@ -226,4 +226,39 @@ class DumpGameRecordHtml {
   }
 
 
+
+
+
+
+
+
+  /**
+   * @note データ登録のメイン処理
+   */
+  async _delete(gameRecord) {
+
+    // 入力内容を取得
+    gameRecord.isDisabled = !(gameRecord.isDisabled);
+
+    // 確認ダイアログ
+    var operation = (gameRecord.isDisabled) ? "無効" : "有効";
+    if (!window.confirm("データを" + operation + "にしますか？")) {
+      return "";
+    }
+
+    // リクエストのポスト＆レスポンス取得
+    var gameRecordDb = new GameRecordDb();
+    var gameRecords = await gameRecordDb.upsert(gameRecord, true);
+
+    // 結果を解析
+    gameRecord = gameRecords.index(gameRecords.length - 1);
+    var recordAnalyzer = new RecordAnalyzer(gameRecords);
+
+    // 戦績を更新
+    var dumpHtml = new DumpHtml();
+    dumpHtml.update(recordAnalyzer);
+  }
+
+  
 }
+
