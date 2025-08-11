@@ -108,7 +108,7 @@ class DumpGameRecordHtml {
     var fnc = async function(e) {
       var msg = "";
       msg += e.data.gameRecord.toString();
-      if (gameRecord.isDisabled) {
+      if (e.data.gameRecord.isDisabled) {
         msg += "\n上記の戦績を有効にしますか？";
       }
       else {
@@ -266,6 +266,7 @@ class DumpGameRecordHtml {
 
   
 }
+
 
 
 
